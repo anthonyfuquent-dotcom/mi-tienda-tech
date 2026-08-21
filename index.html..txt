@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Periféricos y Mantenimiento</title>
+    <style>
+        * { box-sizing: border-box; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        body { background-color: #f4f4f9; color: #333; padding: 20px; }
+        header { background: #1e293b; color: white; text-align: center; padding: 20px 0; margin-bottom: 20px; border-radius: 8px; }
+        h2 { margin-bottom: 15px; border-bottom: 2px solid #2563eb; padding-bottom: 5px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .card p { color: #2563eb; font-weight: bold; margin-bottom: 15px; }
+        .btn-ws { background: #25d366; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; }
+        .btn-ws:hover { background: #128c7e; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TechStore</h1>
+        <p>Periféricos de Cómputo y Servicio Técnico</p>
+    </header>
+
+    <h2>Nuestros Periféricos</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Teclado Mecánico RGB</h3>
+            <p>$45.00</p>
+            <button class="btn-ws" onclick="comprar('Teclado Mecánico RGB')">Pedir por WhatsApp</button>
+        </div>
+        <div class="card">
+            <h3>Mouse Gamer 7200 DPI</h3>
+            <p>$25.00</p>
+            <button class="btn-ws" onclick="comprar('Mouse Gamer 7200 DPI')">Pedir por WhatsApp</button>
+        </div>
+        <div class="card">
+            <h3>Audífonos Surround 7.1</h3>
+            <p>$35.00</p>
+            <button class="btn-ws" onclick="comprar('Audífonos Surround 7.1')">Pedir por WhatsApp</button>
+        </div>
+    </div>
+
+    <h2>Servicio de Mantenimiento</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Mantenimiento Preventivo</h3>
+            <p>Limpieza física + cambio de pasta térmica</p>
+            <button class="btn-ws" onclick="solicitarServicio('Mantenimiento Preventivo')">Agendar Cita</button>
+        </div>
+        <div class="card">
+            <h3>Optimización de Software</h3>
+            <p>Formateo, eliminación de virus e instalación de S.O.</p>
+            <button class="btn-ws" onclick="solicitarServicio('Optimización de Software')">Agendar Cita</button>
+        </div>
+    </div>
+
+    <script>
+        // REEMPLAZA ESTE NÚMERO POR EL TUYO (incluye código de país, ej: 573001234567)
+        const telefono = "573168912289";
+
+        function comprar(producto) {
+            const mensaje = encodeURIComponent(`Hola, estoy interesado en comprar el producto: ${producto}`);
+            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+        }
+
+        function solicitarServicio(servicio) {
+            const mensaje = encodeURIComponent(`Hola, deseo cotizar/agendar el servicio de: ${servicio}`);
+            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
